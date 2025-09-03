@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 
-interface HomeScreenProps {
+interface ScreenProps {
     card: string;
 }
 
-function HomeScreen(props: HomeScreenProps){
+function Screen(props: ScreenProps){
   const [pressed, setPressed] = useState(false);
   return (
     <Pressable 
@@ -24,16 +24,19 @@ function HomeScreen(props: HomeScreenProps){
 
 export default function Cards() {
   return (
-    <View style={styles.homeScreen}>
-      <HomeScreen card="Card" />
-      <HomeScreen card="Card" />
-      <HomeScreen card="Card" />
+    <View style={styles.Screen}>
+      <Screen card="Card" />
+      <Screen card="Card" />
+      <Screen card="Card" />
+      <Screen card="Card" />
+
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  homeScreen:{
+  Screen:{
+    backgroundColor: '#0F1310',
     flex: 1,                 
     justifyContent: 'center',
     alignItems: 'center',    
@@ -54,20 +57,25 @@ const styles = StyleSheet.create({
       shadowRadius: 6,
   },
   text:{
-    fontSize: 20,
-    fontWeight: 'bold' 
+    fontSize: 18,
+    fontWeight: '700',
+    letterSpacing: 0.6,
+    textTransform: 'uppercase',
+    textAlign: 'center',
   },
   textPressed:{
-    color: '#f7f5f0',
+    color: 'black',
   },
   textDefault:{
-    color: '#4B5320',
+    color: '#EDECE7',
   },
   cardPressed:{
-    backgroundColor: '#4B5320',
+    backgroundColor: '#4B5320', 
+    borderColor: '#C2A86B',
   },
   cardDefault:{
-    backgroundColor: '#f7f5f0',
+    backgroundColor: '#1B2A24', 
+    borderColor: '#2E3B35',     
   }
 })
 
