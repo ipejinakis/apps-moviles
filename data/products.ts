@@ -5,7 +5,7 @@ export type Product = {
   title: string;
   price: number;
   description: string;
-  image: ImageSourcePropType; // acepta require(...) o { uri: "..." }
+  image: ImageSourcePropType; 
 };
 
 export const PRODUCTS: Product[] = [
@@ -15,7 +15,6 @@ export const PRODUCTS: Product[] = [
     price: 199999,
     description:
       "Cafetera express de acero inoxidable. Depósito de 1.5L, bomba de 15 bar.",
-    // IMAGEN LOCAL (asegurate de tener assets/cafetera.png)
     image: require("../assets/images/cafetera.png"),
   },
   {
@@ -24,7 +23,6 @@ export const PRODUCTS: Product[] = [
     price: 89999,
     description:
       "Bluetooth 5.3, cancelación de ruido, 30 horas de batería con estuche.",
-    // IMAGEN REMOTA (URI)
     image: require("../assets/images/auriculares.png"),  },
   {
     id: "3",
