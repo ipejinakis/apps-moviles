@@ -1,5 +1,5 @@
 import { Stack } from 'expo-router';
-import { createContext, useState } from 'react';
+import { createContext } from 'react';
 
 
 export type NameContextValue = {
@@ -11,17 +11,11 @@ export type NameContextValue = {
 export const NameContext = createContext<NameContextValue | undefined>(undefined);
 
 export default function RootLayout() {
-  const [fullName, setFullName] = useState<string>('Nombre Apellido');
-
-  return (
-    <NameContext.Provider value={{ fullName, setFullName }}>
-      <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen
-          name="change-name"
-          options={{ title: 'Cambiar nombre', presentation: 'modal' }}
-        />
-      </Stack>
-    </NameContext.Provider>
+  
+  return (    
+    <Stack>
+    <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+    </Stack>
+    
   );
 }
